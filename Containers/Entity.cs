@@ -46,10 +46,7 @@ namespace ACE.Containers
 		/// </summary>
 		public void PreUpdate()
         {
-			if (IsPlayer)
-				Utilities.Logger.Trace($"Player {WhoAmI} Local={Local}");
-			else
-				Utilities.Logger.Trace($"Monster {WhoAmI} Local={Local}");
+
 		}
 
 		/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

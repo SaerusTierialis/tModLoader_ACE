@@ -7,12 +7,14 @@ namespace ACE
     public class ACEPlayer : ModPlayer
     {
         public Containers.Entity Entity { get; private set; }
+        public Containers.PlayerSyncData SyncData { get; private set; }
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Init/Deinit ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
         public override void Initialize()
         {
             Entity = new Containers.Entity(this);
+            SyncData = new Containers.PlayerSyncData();
         }
 
         public override void OnEnterWorld(Player player)
@@ -21,7 +23,7 @@ namespace ACE
             LocalData.SetLocalPlayer(this);
 
             //calc XP mult
-            ////Systems.XPRewards.Rewards.UpdateXPMultiplier();
+            Systems.XPRewards.Rewards.UpdateXPMultiplier();
 
             //request world data from server
             if (ACE.NETMODE_CLIENT)
@@ -33,12 +35,12 @@ namespace ACE
         public override void PlayerConnect(Player player)
         {
             //anything here may be called several times in a row by a client joining a populated server
-            ////Systems.XPRewards.Rewards.UpdateXPMultiplier();
+            Systems.XPRewards.Rewards.UpdateXPMultiplier();
         }
 
         public override void PlayerDisconnect(Player player)
         {
-            ////Systems.XPRewards.Rewards.UpdateXPMultiplier();
+            Systems.XPRewards.Rewards.UpdateXPMultiplier();
         }
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Update Cycle ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -46,6 +48,12 @@ namespace ACE
         public override void PreUpdate()
         {
             Entity.PreUpdate();
+        }
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ XP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        public void AddXP(uint xp)
+        {
+            //TODO
         }
     }
 }

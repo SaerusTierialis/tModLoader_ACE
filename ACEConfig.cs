@@ -53,7 +53,7 @@ namespace ACE
 
         public override void OnChanged()
         {
-            //Systems.XPRewards.Rewards.UpdateXPMultiplier();
+            Systems.XPRewards.Rewards.UpdateXPMultiplier();
         }
     }
 

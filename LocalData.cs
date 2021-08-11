@@ -24,7 +24,7 @@ namespace ACE
         ////public static UIData UIData { get; private set; }
 
         //xp
-        ////public static XP xp_overhead;
+        public static XP xp_overhead;
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Public Methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -42,12 +42,12 @@ namespace ACE
             ////UIData = null;
 
             //xp
-            ////xp_overhead = null;
+            xp_overhead = null;
 
             //reset local data stored elsewhere...
 
             //xp lookup
-            ////Systems.XPRewards.NPCRewards.ClearLoookup();
+            Systems.XPRewards.NPCRewards.ClearLoookup();
         }
 
         public static void SetLocalPlayer(ACEPlayer local_player)
@@ -69,7 +69,7 @@ namespace ACE
             ////UIData = new UIData();
 
             //xp
-            ////xp_overhead = new XP();
+            xp_overhead = new XP();
         }
     }
 }
